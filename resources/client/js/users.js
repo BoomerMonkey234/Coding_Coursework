@@ -1,6 +1,6 @@
 "use strict";
 function getUsersList() {
-    debugger;
+    //debugger;
     console.log("Invoked getUsersList()");     //console.log your BFF for debugging client side - also use debugger statement
     const url = "/users/list/";    		// API method on web server will be in Users class, method list
     fetch(url, {
@@ -23,9 +23,13 @@ function getUser() {
     const UserID = document.getElementById("UserID").value;  //get the UserId from the HTML element with id=UserID
     //let UserID = 1; 			  //You could hard code it if you have problems
     //debugger;				  //debugger statement to allow you to step through the code in console dev F12
-    const url = "/users/get/";       // API method on webserver
-    fetch(url + UserID, {                // UserID as a path parameter
-        method: "GET",
+    let url = "/users/add/";
+    let formData = new FormData(document.getElementById('LoginForm'));
+
+    // API method on webserver
+    fetch(url , {                // UserID as a path parameter
+        method: "POST",
+        body: formData,
     }).then(response => {
         return response.json();                         //return response to JSON
     }).then(response => {
@@ -43,3 +47,45 @@ function formatUsersList(myJSONArray){
     }
     document.getElementById("UsersTable").innerHTML = dataHTML;
 }
+function UsersLogin() {
+    //debugger;
+    console.log("Invoked UsersLogin() ");
+    let url = "/users/login";
+    let formData = new FormData(document.getElementById('LoginForm'));
+
+    fetch(url, {
+        method: "POST",
+        body: formData,
+    }).then(response => {
+        return response.json();                 //now return that promise to JSON
+    }).then(response => {
+        if (response.hasOwnProperty("Error")) {
+            alert(JSON.stringify(response));        // if it does, convert JSON object to string and alert
+        } else {
+            Cookies.set("Token", response.Token);
+            Cookies.set("UserName", response.UserName);
+            window.open("index.html", "_self");       //open index.html in same tab
+        }
+    });
+}
+function logout() {
+    //debugger;
+    console.log("Invoked logout");
+    let url = "/users/logout";
+    fetch(url, {method: "POST"
+    }).then(response => {
+        return response.json();                 //now return that promise to JSON
+    }).then(response => {
+        if (response.hasOwnProperty("Error")) {
+            alert(JSON.stringify(response));        // if it does, convert JSON object to string and alert
+        } else {
+            Cookies.remove("Token", response.Token);    //UserName and Token are removed
+            Cookies.remove("UserName", response.UserName);
+            window.open("index.html", "_self");       //open index.html in same tab
+        }
+    });
+}
+
+
+
+
