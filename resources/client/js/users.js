@@ -22,7 +22,7 @@ function getUser() {
     console.log("Invoked getUser()");     //console.log your BFF for debugging client side
     const UserID = document.getElementById("UserID").value;  //get the UserId from the HTML element with id=UserID
     //let UserID = 1; 			  //You could hard code it if you have problems
-    //debugger;				  //debugger statement to allow you to step through the code in console dev F12
+    debugger;				  //debugger statement to allow you to step through the code in console dev F12
     let url = "/users/add/";
     let formData = new FormData(document.getElementById('LoginForm'));
 

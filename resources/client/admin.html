@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="/client/js/admin.js"></script>
+<script src="/client/js/index.js"></script>
+<script src="/client/js/users.js"></script>
 <head>
+    <style>
+        body {
+            background-image: url('https://c4.wallpaperflare.com/wallpaper/11/322/353/gradient-pink-purple-sky-wallpaper-preview.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+    </style>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home</title>
+    <script src="/client/js/users.js"></script>
+    <link rel="stylesheet" type="text/css" href="/client/css/styles.css">
 </head>
 <body>
+<button onclick='getUsersList();'>Run getUsersList</button>
+<table id="UsersTable"></table>
+<br>
 
+<form id="userDetails">
+    User id: <input type="text" id="UserID">
+</form>
+<button onclick='getUser();'>Run getUser</button>
+<div id="DisplayOneUser"></div>
+<br>
+
+<form id="InputUserDetails">
+    Username: <input type="text" name="UserName">
+    Password: <input type="text" name="Password">
+    Roll: <input type="text" name="Roll">
+</form>
 </body>
 </html>
