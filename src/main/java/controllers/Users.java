@@ -62,12 +62,12 @@ public class Users{
     }
     @POST
     @Path("add")
-    public String UsersAdd(@FormDataParam("UserName") String UserName, @FormDataParam("Roll") String Roll, @FormDataParam("Password") String Password) {
+    public String UsersAdd(@FormDataParam("UserName") String UserName, @FormDataParam("Password") String Password) {
         System.out.println("Invoked Users.UsersAdd()");
         try {
             PreparedStatement ps = Main.db.prepareStatement("INSERT INTO Users (UserName, Roll, Password) VALUES (?, ?, ?)");
             ps.setString(1, UserName);
-            ps.setString(2, Roll);
+            ps.setString(2, "User");
             ps.setString(3, Password);
             ps.execute();
             return "{\"OK\": \"Added user.\"}";
@@ -112,4 +112,29 @@ public class Users{
         }
     }
 
+
+    @POST
+    @Path("logout")
+    public static String logout(@CookieParam("Token") String Token){
+        try{
+            System.out.println("users/logout "+ Token);
+            PreparedStatement ps = Main.db.prepareStatement("SELECT UserID FROM Users WHERE Token=?");
+            ps.setString(1, Token);
+            ResultSet logoutResults = ps.executeQuery();
+            if (logoutResults.next()){
+                int UserID = logoutResults.getInt(1);
+                //Set the token to null to indicate that the user is not logged in
+                PreparedStatement ps1 = Main.db.prepareStatement("UPDATE Users SET Token = NULL WHERE UserID = ?");
+                ps1.setInt(1, UserID);
+                ps1.executeUpdate();
+                return "{\"status\": \"OK\"}";
+            } else {
+                return "{\"error\": \"Invalid token!\"}";
+
+            }
+        } catch (Exception ex) {
+            System.out.println("Database error during /users/logout: " + ex.getMessage());
+            return "{\"error\": \"Server side error!\"}";
+        }
+    }
 }

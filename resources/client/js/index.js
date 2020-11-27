@@ -1,7 +1,7 @@
 function UsersLogout() {
     //debugger;
     console.log("Invoked logout");
-    let url = "/users/login";
+    let url = "/users/logout";
     fetch(url, {method: "POST"
     }).then(response => {
         return response.json();                 //now return that promise to JSON
@@ -11,7 +11,7 @@ function UsersLogout() {
         } else {
             Cookies.remove("Token", response.Token);    //UserName and Token are removed
             Cookies.remove("UserName", response.UserName);
-            window.open("index.html", "_self");       //open index.html in same tab
+            window.open("login.html", "_self");       //open index.html in same tab
         }
     });
 }
