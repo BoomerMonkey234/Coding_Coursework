@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src="/client/js/index.js"></script>
-<script src="/client/js/login.js"></script>
-<script src="/client/js/cookies.js"></script>
-
+    <script src="/client/js/index.js"></script>
+    <script src="/client/js/login.js"></script>
+    <script src="/client/js/cookies.js"></script>
+    <script src="/client/js/admin.js"></script>
+    <link rel="stylesheet" href="css/index.css">
     <style>
         body {
             background-image: url('https://c4.wallpaperflare.com/wallpaper/11/322/353/gradient-pink-purple-sky-wallpaper-preview.jpg');
@@ -18,8 +19,19 @@
     <script src="/client/js/users.js"></script>
     <link rel="stylesheet" type="text/css" href="/client/css/styles.css">
 </head>
-<body>
 
-<button class="button" onclick='UsersLogout();'>LOGOUT</button>
+<body>
+<div class="header">
+    <a href="#default" class="logo">AMPLIFY Home</a>
+    <div class="header-right">
+        <a class="active" href="#home">Settings</a>
+        <a href="#contact">Currently signed in as:</a>
+        <a class="button" onclick="UsersLogout()">Logout</a>
+    </div>
+</div>
+
+<div align="right">
+<button class="button" onclick='ToAdmin(), CheckLogin();' >ADMIN</button>
+</div>
 </body>
 </html>
