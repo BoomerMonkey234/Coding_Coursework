@@ -22,19 +22,26 @@
 </head>
 
 <body onload="pageload()">
-<div class="header">
-    <a href="#default" class="logo">AMPLIFY Home</a>
+<div class="navbar">
+    <a href="#home" class="logo" onclick="Home()">AMPLIFY Home</a>
     <div class="header-right">
-        <a class="dropbtn" href="#">Settings</a>
+        <div class="dropdown">
+        <button class="dropbtn">Settings
+            <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a class="button" onclick="ToAdmin()">ADMIN</a>
+        </div>
+    </div>
         <a id="uNameDetail"></a>
         <a class="button" onclick="UsersLogout()">Logout</a>
-    </div>
+</div>
 </div>
 
-
-
 <div align="right">
-    <button class="button" onclick='ToAdmin();'>ADMIN</button>
+
 </div>
 </body>
 
