@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <script src="/client/js/index.js"></script>
     <script src="/client/js/login.js"></script>
     <script src="/client/js/cookies.js"></script>
@@ -20,18 +21,21 @@
     <link rel="stylesheet" type="text/css" href="/client/css/styles.css">
 </head>
 
-<body>
+<body onload="pageload()">
 <div class="header">
     <a href="#default" class="logo">AMPLIFY Home</a>
     <div class="header-right">
-        <a class="active" href="#home">Settings</a>
-        <a href="#contact">Currently signed in as:</a>
+        <a class="dropbtn" href="#">Settings</a>
+        <a id="uNameDetail"></a>
         <a class="button" onclick="UsersLogout()">Logout</a>
     </div>
 </div>
 
+
+
 <div align="right">
-<button class="button" onclick='ToAdmin(), CheckLogin();' >ADMIN</button>
+    <button class="button" onclick='ToAdmin();'>ADMIN</button>
 </div>
 </body>
+
 </html>
