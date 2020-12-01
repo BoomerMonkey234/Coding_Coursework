@@ -1,5 +1,5 @@
 function UsersLogout() {
-    //debugger;
+    debugger;
     console.log("Invoked logout");
     let url = "/users/logout";
     fetch(url, {method: "POST"

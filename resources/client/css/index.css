@@ -31,6 +31,7 @@
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    cursor: pointer;
 }
 .navbar input[type=text] {
     padding: 6px;
@@ -38,6 +39,7 @@
     margin-top: 8px;
     margin-right: 16px;
     font-size: 17px;
+
 }
 .navbar .search-container button {
     float: right;
@@ -47,7 +49,7 @@
     background: #ddd;
     font-size: 17px;
     border: none;
-    cursor: pointer;
+
 }
 
 .navbar .search-container button:hover {
@@ -65,6 +67,7 @@
         width: 100%;
         margin: 0;
         padding: 14px;
+
     }
     .navbar input[type=text] {
         border: 1px solid #ccc;
@@ -87,12 +90,12 @@
     background-color: inherit;
     font-family: inherit; /* Important for vertical align on mobile phones */
     margin: 0; /* Important for vertical align on mobile phones */
+    cursor: pointer;
 }
 
 /* Add a red background color to navbar links on hover */
 .navbar a:hover, .dropdown:hover .dropbtn {
     background-color: dodgerblue;
-    cursor: pointer;
 }
 
 /* Dropdown content (hidden by default) */
@@ -103,7 +106,6 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    cursor: pointer;
 }
 
 /* Links inside the dropdown */
@@ -125,6 +127,7 @@
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
     display: block;
+    cursor: pointer;
 }
 
 body {
@@ -132,6 +135,7 @@ body {
     background-color: white;
     color: black;
     font-size: 25px;
+
 }
 
 .dark-mode {
