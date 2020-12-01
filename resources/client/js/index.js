@@ -33,3 +33,9 @@ function Playlists() {
     let url = "/users/playlists";
     window.open("playlists.html", "_self");
 }
+function Songs() {
+    //debugger;
+    console.log("Invoked Songs() ");
+    let url = "/users/songs";
+    window.open("songs.html", "_self");
+}
