@@ -16,9 +16,20 @@ function UsersLogout() {
     });
 }
 function pageload(){
-    debugger;
+    //debugger;
     let Userdiv = document.getElementById("uNameDetail");
     let UserName = Cookies.get("UserName");
     Userdiv.innerHTML = "You are signed in as " + UserName;
 
+}
+function DarkMode() {
+    var element = document.body;
+    element.classList.toggle("dark-mode");
+}
+
+function Playlists() {
+    //debugger;
+    console.log("Invoked Playlists() ");
+    let url = "/users/playlists";
+    window.open("playlists.html", "_self");
 }
