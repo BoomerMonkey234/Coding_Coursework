@@ -16,7 +16,7 @@ function UsersLogout() {
     });
 }
 function pageload(){
-    //debugger;
+    debugger;
     let Userdiv = document.getElementById("uNameDetail");
     let UserName = Cookies.get("UserName");
     Userdiv.innerHTML = "You are signed in as " + UserName;
