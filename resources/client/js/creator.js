@@ -1,5 +1,5 @@
 function Home() {
-    //debugger;
+    debugger;
     console.log("Invoked ReturnHome() ");
     window.open("index.html", "_self");
 }
