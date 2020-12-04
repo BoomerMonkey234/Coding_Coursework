@@ -30,12 +30,15 @@ function DarkMode() {
 function Playlists() {
     //debugger;
     console.log("Invoked Playlists() ");
-    let url = "/users/playlists";
     window.open("playlists.html", "_self");
 }
 function Songs() {
     //debugger;
     console.log("Invoked Songs() ");
-    let url = "/users/songs";
     window.open("songs.html", "_self");
+}
+function Creator() {
+    //debugger;
+    console.log("Invoked toCreato() ");
+    window.open("creator.html", "_self");
 }
