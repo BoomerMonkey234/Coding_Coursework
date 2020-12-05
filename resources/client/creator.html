@@ -4,7 +4,7 @@
     <script src="/client/js/index.js"></script>
     <script src="/client/js/creator.js"></script>
     <script src="/client/js/cookies.js"></script>
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/creator.css">
 
     <meta charset="UTF-8">
     <title>Creator</title>
@@ -19,8 +19,22 @@
 </style>
 <body onload="pageload()">
 <div id="uNameDetail"></div>
+<br>
+<p>Upload your songs as mp3 files to AMPLIFY!</p>
+<form action="/action_page.php">
+    <input type="file" id="myFile" name="filename">
+<br>
+<br>
+<form id="addSong">
+    <label for="SongName">Enter Song Name:</label><br>
+    <input type="text" name="SongName" id="SongName"><br>
+    <label for="Genre">Enter Genre:</label><br>
+    <input type="text" name="Genre" id="Genre">
+    <br>
+    <input type="submit">
 
-
+</form>
+</form>
 
 </body>
 </html>
