@@ -7,6 +7,7 @@
     <script src="/client/js/admin.js"></script>
     <script src="/client/js/songs.js"></script>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/songs.css">
     <meta charset="UTF-8">
     <title>Browse</title>
 </head>
@@ -14,9 +15,6 @@
 <div class="navbar">
     <a href="#home" class="logo">AMPLIFY Home</a>
     <div class="header-right">
-        <form action="songs.html">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit">Submit</button>
     <div class="header-right">
         <div class="dropdown">
             <button class="dropbtn">Settings
@@ -38,18 +36,42 @@
     <a href="#" class="button">Browse</a>
     <a href="#" class="button" onclick="Playlists()">Playlists</a>
     <a href="#" class="button" onclick="Creator()">Creators</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 4</a>
 </div>
+</div>
+<br>
 <div align="middle">
-    <p>SONGS</p>
-    <audio controls>
-        <source src="/client/mp3/Never Gonna Give You Up Original.mp3" type="audio/mp3">
-    </audio>
-    <audio controls>
-        <source src="/client/mp3/test.mp3" type="audio/mp3">
-    </audio>
-</div>
+    <input type="text" id="myInput" onkeyup="swag()" placeholder="Search for songs..">
 
+    <table id="myTable">
+        <tr class="header">
+            <th style="width:60%;">Name</th>
+            <th style="width:40%;">Track</th>
+        </tr>
+        <tr>
+            <td>Test</td>
+            <td>
+                <audio controls>
+                <source src="/client/mp3/test.mp3" type="audio/mp3">
+            </audio>
+            </td>
+        </tr>
+        <tr>
+            <td>work</td>
+            <td>
+                <audio controls>
+                <source src="/client/mp3/work.mp3" type="audio/mp3">
+            </audio>
+            </td>
+        </tr>
+        <tr>
+            <td>Island Trading</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Koniglich Essen</td>
+            <td>Germany</td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

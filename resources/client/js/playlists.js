@@ -4,3 +4,4 @@ function Home() {
     let url = "/users/index";
     window.open("index.html", "_self");
 }
+
