@@ -24,6 +24,39 @@ function swag() {
         }
     }
 }
+
+function getSongs(){
+    debugger;
+    console.log("Invoked getSongs()");     //console.log your BFF for debugging client side - also use debugger statement
+    const url = "/songs/list/";    		// API method on web server will be in Users class, method list
+    fetch(url, {
+        method: "GET",
+    }).then(response => {
+        return response.json();
+    }).then(response => {
+        if (response.hasOwnProperty("Error")) {
+            alert(JSON.stringify(response));
+        } else {
+            dataHTML = "";
+            for (let item of response) {
+                dataHTML += `<audio controls><source class='alertMusicName' type='audio/mpeg' src='${item.SongName}'></audio>`;
+            }
+            document.getElementById("MusicList").innerHTML += dataHTML;
+
+            let musicList = document.getElementsByClassName("alertMusicName");
+            for (let music of musicList){
+                    music.addEventListener("play", plays());
+            }
+        }
+    });
+}
+
+function plays(){
+    debugger;
+    console.log("This function needs the SongName (from src) so that it can update the songs table to say it has been played");
+}
+
+
 function UpdatePlays() {
     //debugger;
     console.log("Invoked UpdatePlays() ");

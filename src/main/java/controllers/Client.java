@@ -76,7 +76,7 @@ public class Client {
 
     @GET
     @Path("mp3/{path}")
-    @Produces({"audio/mpeg"})
+    @Produces({"audio/mp3"})
     public byte[] getMp3File(@PathParam("path") String path) {
         return getFile("client/mp3/" + path);
     }
