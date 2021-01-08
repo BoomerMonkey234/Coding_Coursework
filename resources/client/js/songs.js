@@ -24,9 +24,9 @@ function swag() {
         }
     }
 }
-
+//
 function getSongs(){
-    debugger;
+    //debugger;
     console.log("Invoked getSongs()");     //console.log your BFF for debugging client side - also use debugger statement
     const url = "/songs/list/";    		// API method on web server will be in Users class, method list
     fetch(url, {

@@ -1,5 +1,5 @@
 function UsersLogout() {
-    debugger;
+    //debugger;
     console.log("Invoked logout");
     let url = "/users/logout";
     fetch(url, {method: "POST"
@@ -16,14 +16,14 @@ function UsersLogout() {
     });
 }
 function pageload(){
-    debugger;
+    //debugger;
     let Userdiv = document.getElementById("uNameDetail");
     let UserName = Cookies.get("UserName");
     Userdiv.innerHTML = "You are signed in as " + UserName;
 
 }
 function DarkMode() {
-    var element = document.body;
+    var element = document.body; //Inverts white to black, does not effect navbars
     element.classList.toggle("dark-mode");
 }
 

@@ -60,19 +60,20 @@ public class Users{
             return "{\"Error\": \"Unable to get item, please see server console for more info.\"}";
         }
     }
+    //API for adding a user
     @POST
     @Path("add")
     public String UsersAdd(@FormDataParam("UserName") String UserName, @FormDataParam("Password") String Password) {
         System.out.println("Invoked Users.UsersAdd()");
         try {
-            PreparedStatement ps = Main.db.prepareStatement("INSERT INTO Users (UserName, Roll, Password) VALUES (?, ?, ?)");
+            PreparedStatement ps = Main.db.prepareStatement("INSERT INTO Users (UserName, Roll, Password) VALUES (?, ?, ?)"); //These values are inputted on the webpage
             ps.setString(1, UserName);
-            ps.setString(2, "User");
+            ps.setString(2, "User"); //When the user signs up the roll is automatically set to User
             ps.setString(3, Password);
             ps.execute();
-            return "{\"OK\": \"Added user.\"}";
+            return "{\"OK\": \"Added user.\"}"; // When user is added it will return a message saying so
         } catch (Exception exception) {
-            System.out.println("Database error: " + exception.getMessage());
+            System.out.println("Database error: " + exception.getMessage()); //Catches errors that arise from my table
             return "{\"Error\": \"Unable to create new item, please see server console for more info.\"}";
         }
 

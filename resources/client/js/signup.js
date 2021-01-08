@@ -1,14 +1,14 @@
 function AddUser() {
     console.log("Invoked AddUser()");
     const formData = new FormData(document.getElementById('LoginForm'));
-    let url = "/users/add";
+    let url = "/users/add"; //runs the java API
     fetch(url, {
         method: "POST",
         body: formData,
     }).then(response => {
         return response.json()
     }).then(response => {
-        if (response.hasOwnProperty("Error")) {
+        if (response.hasOwnProperty("Error")) { // if the user already exists an error will arrise
             alert(JSON.stringify(response));
         } else {
             window.open("/client/login.html", "_self");   //URL replaces the current page.  Create a new html file
